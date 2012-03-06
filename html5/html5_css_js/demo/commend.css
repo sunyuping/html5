@@ -1,0 +1,12 @@
+body{
+    /*CSS*/
+    background-color: #ffffcc;
+   /* background-image: url("../image/butterfly.gif");*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    /*background:#fff000 url("../image/butterfly.gif") no-repeat fixed 50% 0%*/
+    /*margin:100px 40px 10px 70px;*/
+}
+
+a{ text-decoration: none;}

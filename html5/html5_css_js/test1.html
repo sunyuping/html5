@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="UTF-8">
+<head>
+     <title>这个是一个测试页面</title>
+     <script  src="testjs.js">  </script>  
+</head>
+<body>    
+<ul id="home" style="top: 0px; ">
+	<li class="list " style="background-color: rgb(15, 127, 255); ">
+		<div class="inner">
+			<div class="name">This works better on iOS</div>
+			<div class="count">6</div>
+		</div>
+	</li>
+	<li class="list " style="background-color: rgb(15, 139, 255); ">
+		<div class="inner">
+			<div class="name">This is a demo</div>
+			<div class="count">3</div>
+		</div>
+	</li>
+	<li class="list " style="background-color: rgb(15, 151, 255); ">
+		<div class="inner">
+			<div class="name">by Evan You</div>
+			<div class="count">4
+		</div>
+	</div>
+	</li>
+</ul>
+                           
+</body>
+</html>    
+
+<!--
+ ondblclick="$('a',1,2,3,4,5,6,7,8,9,'b',2,3,'汉字测试')"
+ insertElement(this.id,'before')
+ <!DOCTYPE html>
+ <html  >
+ <head>
+ 
+ <title>HTML5 Demo: geolocation</title>
+ <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAZNVcM3B5rUU5SJeXURUaBxTBfUk9TZrBRaIteybtnU2KziHEpRTn4b5CncoKZUG6YvDa1nKeST_Y5A"
+ type="text/javascript"></script>
+ </head>
+ 
+ <body  >
+ <script>
+ var geocoder = null;
+ function addAddressToMap(response) {
+ if (!response || response.Status.code != 200) {
+ alert("对不起，不能解析这个地址");
+ } else {
+ 
+ var add = "";
+ for (var i = 0; i < response.Placemark.length; i++) {
+ add += response.Placemark[i].address + " | ";
+ }
+ alert("您查找的位置是 : "   + add);//.substr(5,3)
+ }
+ }
+ 
+ function showLocation(address) {
+ 
+ if (GBrowserIsCompatible()) {
+ geocoder = new GClientGeocoder();
+ geocoder.getLocations(address, addAddressToMap);
+ }
+ }
+ 
+ 
+ function success(position) {
+ showLocation(position.coords.latitude + "," + position.coords.longitude);
+ return position.coords.latitude + "," + position.coords.longitude;
+ }
+ 
+ function error(msg) {
+ //            var s = document.querySelector('#status');
+ //            s.innerHTML = typeof msg == 'string' ? msg : "failed";
+ //            s.className = 'fail';
+ 
+ // console.log(arguments);  
+ }
+ 
+ if (navigator.geolocation) {
+ navigator.geolocation.getCurrentPosition(success, error);
+ } else {
+ error('not supported');
+ }
+ 
+ 
+ </script>
+ 
+ 
+ 
+ </body>
+ </html>
+ -->
