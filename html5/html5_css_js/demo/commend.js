@@ -152,7 +152,7 @@ function Op(o)
         y+=o.offsetTop;
     }
     while (o=o.offsetParent);
-    return {"x":x,"y":y};
+    return {x:x,y:y};
 }
 function touchdiv(event){
     alert('dianji=='+event.clientY);
@@ -262,7 +262,8 @@ function webPointToHtml(p_x,p_y,p_scale){
     p_y*=p_scale;
     p_x +=scrollPositionX;
     p_y +=scrollPositionY;
-    return {"x":p_x,"y":p_y}
+    alert('webPointToHtml'+p_x+','+p_y+','+p_scale);
+    return {x:p_x,y:p_y}
     
 }
 function htmlPointToWeb(p_x,p_y,p_scale){
@@ -272,14 +273,17 @@ function htmlPointToWeb(p_x,p_y,p_scale){
     p_y -=scrollPositionY;
     p_x/=p_scale;
     p_y/=p_scale;
-    return {"x":p_x,"y":p_y}
+    return {x:p_x,y:p_y}
 }
 
 function getDivPosition(p_x,p_y,p_webWidth){
+    alert('getDivPosition'+p_x+','+p_y+','+p_webWidth);
     var divid;
     var point_str = '';
-    var html_point = webPointToHtml(p_x,p_y)
     var scale = p_webWidth/window.outerWidth;
+    var html_point = webPointToHtml(p_x,p_y,scale);
+    alert('html_point'+html_point.x+','+html_point.y);
+    
     var tagid = document.elementFromPoint(p_x,p_y,scale);
     while(1){
         if(tagid.tagName == "DIV"){
@@ -288,10 +292,11 @@ function getDivPosition(p_x,p_y,p_webWidth){
             var div_y= Op(divid).y;
             var div_w = divid.clientWidth;
             var div_h = divid.clientHeight;
-            
+            alert('div'+div_x+','+div_y+','+div_w+','+div_h);
             if(div_h < pic_width){
                 var webpoint =htmlPointToWeb(div_x.div_y,scale); 
                 point_str = webpoint.x+','+webpoint.y+','+div_h;
+                alert('div_h < pic_width');
             }else{
                 if(div_y-p_y < pic_width){
                     p_y = div_y - pic_width;
