@@ -16,6 +16,14 @@
     UILabel *refreshLabel ;
     UIImageView *refreshArrow;
     UIActivityIndicatorView *refreshSpinner;
+    
+    //
+    CGPoint _touchBegainPoint;
+    UIImageView *_screenShotOfWebView;
+    UIImageView *_screenShotBackImageView;
+    UIPanGestureRecognizer *_panGesture;
+    
+    
 }
 //@property (strong, nonatomic)
 @end

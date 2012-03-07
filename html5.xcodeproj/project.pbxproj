@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B362FA21507616000F677F6 /* commend.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BA779EA14E90A6E0007987C /* commend.js */; };
 		9B4907E414E3CEB7000FDFE5 /* testjs.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BF0CE6214DE91A40009510F /* testjs.js */; };
 		9B4C3AD314E90AB5006C66F3 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C3ABB14E90AB5006C66F3 /* arrow.png */; };
 		9B4C3AD414E90AB5006C66F3 /* icon_appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C3ABC14E90AB5006C66F3 /* icon_appstore.png */; };
@@ -308,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B362FA21507616000F677F6 /* commend.js in Resources */,
 				9B4907E414E3CEB7000FDFE5 /* testjs.js in Resources */,
 				9BB52B1314DD5A7E00C3F2E8 /* InfoPlist.strings in Resources */,
 				9BF0CE6314DE91A40009510F /* test1.html in Resources */,

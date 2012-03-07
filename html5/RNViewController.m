@@ -135,6 +135,11 @@
     
      NSLog(@"syp===w=%f,h=%f",self.view.bounds.size.width,self.view.bounds.size.height);
     
+    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(captureAndMove:)];
+    [_mainwebview addGestureRecognizer:_panGesture];
+    
+    
+    
 }
 -(void ) doubleTap:(UITapGestureRecognizer*) sender {
     NSLog(@"syp===zhegshi shuangji   ");
@@ -306,7 +311,7 @@
      "}\";"
      "document.getElementsByTagName('head')[0].appendChild(script);"]; 
     
-    NSString *size =  [_mainwebview stringByEvaluatingJavaScriptFromString:@"MyWebViewSize();"];
+    NSString *size =  [_mainwebview stringByEvaluatingJavaScriptFromString:@"addmyevent();"];
     NSLog(@"syp===size=%@",size);
   //   _mainwebview.frame = CGRectMake(5, 0, self.view.bounds.size.width-10, [size intValue]);
     
@@ -432,7 +437,70 @@
         NSString * urlToSave  = [_mainwebview stringByEvaluatingJavaScriptFromString:imgURL];    
         NSLog (@"image  url =%@",urlToSave);    
     }
-    
-    
 }
+-(NSArray*)getPoint:(CGPoint)pt{
+    
+    NSString * jspoint  = [NSString stringWithFormat:@"getDivPosition(%f,%f,%f)", pt.x, pt.y,_mainwebview.frame.size.width];
+    NSString * result_str  = [_mainwebview stringByEvaluatingJavaScriptFromString:jspoint];
+    NSArray *pointarr = [result_str componentsSeparatedByString:@","];
+    return pointarr;
+}
+
+- (void)captureAndMove:(UIPanGestureRecognizer *) gestureRescongnizer{
+    CGSize imageSize = _mainwebview.frame.size;
+    if ([gestureRescongnizer state] == UIGestureRecognizerStateBegan) {
+        _touchBegainPoint = [gestureRescongnizer locationInView:_mainwebview];
+        NSArray *point = [self getPoint:_touchBegainPoint];
+
+        if(UIGraphicsBeginImageContextWithOptions != NULL)
+        {
+            UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
+        } else {
+            UIGraphicsBeginImageContext(imageSize);
+        }
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        [_mainwebview.layer renderInContext:context];
+        UIImage *webViewImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        CGRect rect = CGRectMake(0, _touchBegainPoint.y - 30, imageSize.width, 60);
+        if (_screenShotOfWebView) {
+            [_screenShotOfWebView removeFromSuperview];
+            [_screenShotOfWebView release];
+            _screenShotOfWebView = nil;
+        }
+        
+        _screenShotBackImageView = [[UIImageView alloc] initWithFrame:rect];
+        _screenShotBackImageView.backgroundColor = [UIColor colorWithRed:69.0 / 255.0 green:69.0 / 255.0 blue:69.0 / 255.0 alpha:1.0];
+        [_mainwebview addSubview:_screenShotBackImageView];
+        
+        _screenShotOfWebView = [[UIImageView alloc] initWithFrame:rect];
+        CGRect twoSizeRect = CGRectMake(0, rect.origin.y * 2, rect.size.width * 2, rect.size.height * 2);
+        _screenShotOfWebView.image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([webViewImage CGImage], twoSizeRect)];
+        [_mainwebview addSubview:_screenShotOfWebView];
+    } else if ([gestureRescongnizer state] == UIGestureRecognizerStateChanged) {
+        CGPoint touchPoint = [gestureRescongnizer locationInView:_mainwebview];
+        if (_screenShotOfWebView) {
+            _screenShotOfWebView.frame = CGRectMake(touchPoint.x - _touchBegainPoint.x, 
+                                                    _screenShotOfWebView.frame.origin.y, 
+                                                    _screenShotOfWebView.frame.size.width,
+                                                    _screenShotOfWebView.frame.size.height);
+        }
+    } else if ([gestureRescongnizer state] == UIGestureRecognizerStateEnded) {
+        if (_screenShotOfWebView) {
+            [_screenShotBackImageView removeFromSuperview];
+            [_screenShotBackImageView release];
+            _screenShotBackImageView = nil;
+            
+            [_screenShotOfWebView removeFromSuperview];
+            [_screenShotOfWebView release];
+            _screenShotOfWebView = nil;
+            
+        }
+    }
+}
+
+
 @end

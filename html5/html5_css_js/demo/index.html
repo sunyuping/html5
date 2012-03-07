@@ -108,113 +108,18 @@
 </html> 
 -->
 
-
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
         <title>获得点击处的特定元素的位置</title>
     </head>
-    <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
-        function Op(o)
-        {
-            var x=y=0;
-            do{
-                x+=o.offsetLeft;
-                y+=o.offsetTop;
-            }
-            while (o=o.offsetParent);
-            return {"x":x,"y":y};
-        }
-        function touchdiv(event){
-            var divid;
-            var int_x = window.pageXOffset;
-            var int_y = window.pageYOffset;
-            var int_displaywidth = window.outerWidth;
-            var div_top = event.clientX;
-            var div_left = event.clientY;
-            alert('w_x'+int_x+'w_h'+int_y+'div_x'+div_left+'div_y'+div_top);
-            var tagid = document.elementFromPoint(div_top,div_left);
-            //tagid.style.backgroundColor = "#00ff00";
-            var tagname = tagid.tagName;
-            while(1){
-                if(tagid.tagName == "DIV"){
-                    divid = tagid;
-                    var div_x= Op(divid).x;
-                    var div_y= Op(divid).y;
-                    var div_w = divid.clientWidth;
-                    var div_h = divid.clientHeight;
-                    var child = document.createElement("div");
-                    
-                    child.style.position="absolute";
-                    // cardiv.style.left=currentX-(15/2)+"px";
-                    //cardiv.style.top=currentY-(31/2)+"px";
-                    //cardiv.style.width="150px";
-                    // cardiv.style.height="29px";
-					
-                    child.style.top=div_y+"px";
-                    child.style.left=div_x+"px";
-                    child.style.width = div_w+"px";
-                    child.style.height = div_h+"px";
-                    child.style.backgroundColor = "#ff0000";
-                    document.body.appendChild(child);
-                    break;
-                }
-                tagid = tagid.parentElement;
-                if(tagid == null){
-                    break;
-                }
-            }
-        }
+    <script TYPE="text/javascript" LANGUAGE="JavaScript" src="commend.js"></script>
+    <body onmousemove="onevent(event)" onlode = "addmyevent()">
+        <div>
         
-        var index = 0;
-        function addevent(event) {
-            //var obj = document.getElementById("main_output");
-            print("syp==x=%d,y=%d",event.clientX,event.clientY);
-            var child = document.createElement("div");
-            var now = new Date().getTime();
-            if (event instanceof MouseEvent) {
-                child.innerHTML = (++index) + " <b>" + event.type + "</b> x:" + event.clientX + " y:" + event.clientY + " t:" ;//+ (now - lastevent) + "ms";
-            } else if ((typeof TouchEvent != "undefined") && (event instanceof TouchEvent)) {
-                child.innerHTML = (++index) + " <b>" + event.type + "</b> x:" + event.changedTouches[0].clientX + " y:" + event.changedTouches[0].clientY + " t:" ;//+ (now - lastevent) + "ms";
-            } else {
-                child.innerHTML = (++index) + " <b>" + event.type + "</b> t:";// + (now - lastevent) + "ms";
-            }
-            lastevent = now;
-            /*
-             obj.appendChild(child);
-             if (obj.childNodes.length > 23) { // iOS上div不支持滚动条。。。
-             obj.removeChild(obj.firstChild);
-             }
-             */
-        }
+        <input type="button" value="插入" onclick="test()">
+        </div>
         
-        function onevent(event) {
-            addevent(event);
-            var childs = document.getElementsByTagName("DIV");
-            for(child in childs){
-                child.style.onMouseDown = "touchdiv(event)"
-            }
-            /*
-             try {
-             if (event instanceof TouchEvent) {
-             var obj = document.getElementById(event.type);
-             if (obj != null) {
-             obj.innerHTML = event;
-             }
-             } else if (! (event instanceof MouseEvent)) {
-             var obj = document.getElementById(event.type);
-             if (obj != null) {
-             obj.innerHTML = "type:" + event.type + "<br />" + "scale:" + event.scale + "<br />" + "rotation:" + event.rotation;
-             }
-             }
-             } catch(e) {}
-             */
-        }
-        
-        </script>
-    <body onmousemove="onevent(event)">
         <div class="list">
             
             <div onmousedown="touchdiv(event)" onmouseup="touchdiv()" ><a name="15532081456"></a><a href="/profile.do?id=76922144&amp;htf=731&amp;sid=00e4077b32f37a59b62ed295a9ad417b8&amp;abc">孙玉平손옥평</a>:&nbsp;mlgb的小偷这是在北京你第二次偷我钱包！我的所有证件啊！<p class="place">在&nbsp;<a href="/place/statusmap.do?doingId=3188551797&amp;id=76922144&amp;htf=250&amp;sid=00e4077b32f37a59b62ed295a9ad417b8&amp;abc&amp;ret=home.do%3F%26cp_config%3D2%26from%3Dnull%2315532081456-n-%E6%96%B0%E9%B2%9C%E4%BA%8B-n-0">东小口</a></p><p class="gs">3月3日 21:15&nbsp;来自<a href="http://mpage.renren.com/home/page.do?a=show&amp;pageid=600002551&amp;htf=1312&amp;sid=00e4077b32f37a59b62ed295a9ad417b8&amp;ret=home.do%3F%26cp_config%3D2%26from%3Dnull%2315532081456-n-%E6%96%B0%E9%B2%9C%E4%BA%8B-n-0">人人iPhone</a></p><a href="/status/replystatus.do?doingid=3188551797&amp;id=76922144&amp;htf=727&amp;sid=00e4077b32f37a59b62ed295a9ad417b8&amp;abc&amp;ret=home.do%3F%26cp_config%3D2%26from%3Dnull%2315532081456-n-%E6%96%B0%E9%B2%9C%E4%BA%8B-n-0">回复</a>&nbsp;<em>|</em>&nbsp;<a href="/status/forwardstatus.do?doingid=3188551797&amp;id=76922144&amp;f=homefeeds&amp;htf=728&amp;sid=00e4077b32f37a59b62ed295a9ad417b8&amp;abc&amp;ret=home.do%3F%26cp_config%3D2%26from%3Dnull%2315532081456-n-%E6%96%B0%E9%B2%9C%E4%BA%8B-n-0">分享</a></div>
