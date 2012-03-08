@@ -154,7 +154,7 @@ function Op(o)
     while (o=o.offsetParent);
     return {x:x,y:y};
 }
-function touchdiv(event){
+function touchdiv11(event){
     alert('dianji=='+event.clientY);
     var str = getDivPosition(event.clientX,event.clientY,310.0);
     alert('result=='+str);
@@ -299,7 +299,7 @@ function getDivPosition(p_x,p_y,p_webWidth){
                 point_str = webpoint.x+','+webpoint.y+','+div_h;
                // alert('div_h < pic_width');
             }else{
-                if(div_y+div_h-p_y < pic_width){
+                if(div_y+div_h-html_point.y < pic_width){
                     p_y = div_y+div_h - pic_width;
                 }
                // var webpoint =htmlPointToWeb(p_x,p_y,scale); 
