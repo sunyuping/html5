@@ -45,6 +45,10 @@
 		9BB52B2814DD5B5D00C3F2E8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB52B2714DD5B5D00C3F2E8 /* QuartzCore.framework */; };
 		9BB52B2A14DD5B6800C3F2E8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB52B2914DD5B6800C3F2E8 /* CFNetwork.framework */; };
 		9BCD443714DD8D9B00CAC6A6 /* RNWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD443614DD8D9B00CAC6A6 /* RNWebViewJavascriptBridge.m */; };
+		9BD2710A1508BC6100502DA5 /* iscroll.js in Sources */ = {isa = PBXBuildFile; fileRef = 9BD271091508BC6100502DA5 /* iscroll.js */; };
+		9BD2710B1508BC6B00502DA5 /* iscroll.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BD271091508BC6100502DA5 /* iscroll.js */; };
+		9BD2710D1508C56300502DA5 /* phonegap.js in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2710C1508C56300502DA5 /* phonegap.js */; };
+		9BD2710E1508C57400502DA5 /* phonegap.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BD2710C1508C56300502DA5 /* phonegap.js */; };
 		9BEB139914EA51CC00B29648 /* RNLocalSubstitutionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB139814EA51CC00B29648 /* RNLocalSubstitutionCache.m */; };
 		9BF0CE6314DE91A40009510F /* test1.html in Resources */ = {isa = PBXBuildFile; fileRef = 9BF0CE6114DE91A40009510F /* test1.html */; };
 		9BF0CE6414DE91A40009510F /* testjs.js in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0CE6214DE91A40009510F /* testjs.js */; };
@@ -101,6 +105,8 @@
 		9BB52B2914DD5B6800C3F2E8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9BCD443514DD8D9B00CAC6A6 /* RNWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		9BCD443614DD8D9B00CAC6A6 /* RNWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		9BD271091508BC6100502DA5 /* iscroll.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iscroll.js; sourceTree = "<group>"; };
+		9BD2710C1508C56300502DA5 /* phonegap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = phonegap.js; sourceTree = "<group>"; };
 		9BEB139714EA51CC00B29648 /* RNLocalSubstitutionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNLocalSubstitutionCache.h; sourceTree = "<group>"; };
 		9BEB139814EA51CC00B29648 /* RNLocalSubstitutionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNLocalSubstitutionCache.m; sourceTree = "<group>"; };
 		9BF0CE6114DE91A40009510F /* test1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test1.html; sourceTree = "<group>"; };
@@ -249,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				9BF17F5414F24BB90017A014 /* listdemo.html */,
+				9BD2710C1508C56300502DA5 /* phonegap.js */,
+				9BD271091508BC6100502DA5 /* iscroll.js */,
 				9BF17F5514F24BB90017A014 /* listdemo.js */,
 				9BF17F5614F24BB90017A014 /* phone_startup.png */,
 				9BF17F5714F24BB90017A014 /* sencha-touch.css */,
@@ -309,6 +317,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD2710E1508C57400502DA5 /* phonegap.js in Resources */,
+				9BD2710B1508BC6B00502DA5 /* iscroll.js in Resources */,
 				9B362FA21507616000F677F6 /* commend.js in Resources */,
 				9B4907E414E3CEB7000FDFE5 /* testjs.js in Resources */,
 				9BB52B1314DD5A7E00C3F2E8 /* InfoPlist.strings in Resources */,
@@ -363,6 +373,8 @@
 				9BFA13DB14EB8B8D00672406 /* RNUIDevice.m in Sources */,
 				9BF17F5C14F24BB90017A014 /* listdemo.js in Sources */,
 				9BF17F5F14F24BB90017A014 /* sencha-touch.js in Sources */,
+				9BD2710A1508BC6100502DA5 /* iscroll.js in Sources */,
+				9BD2710D1508C56300502DA5 /* phonegap.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
