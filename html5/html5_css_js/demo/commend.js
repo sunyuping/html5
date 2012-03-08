@@ -164,7 +164,7 @@ function touchdiv(event){
     var int_displaywidth = window.outerWidth;
     var div_top = event.clientX;
     var div_left = event.clientY;
-    alert('w_x'+int_x+'w_h'+int_y+'div_x'+div_left+'div_y'+div_top);
+    //alert('w_x'+int_x+'w_h'+int_y+'div_x'+div_left+'div_y'+div_top);
     var tagid = document.elementFromPoint(div_top,div_left);
     //tagid.style.backgroundColor = "#00ff00";
     var tagname = tagid.tagName;
@@ -188,7 +188,7 @@ function touchdiv(event){
             child.style.width = div_w+"px";
             child.style.height = div_h+"px";
             child.style.backgroundColor = "#ff0000";
-            document.body.appendChild(child);
+           // document.body.appendChild(child);
             break;
         }
         tagid = tagid.parentElement;
@@ -223,7 +223,7 @@ function addevent(event) {
 
 function onevent(event) {
    // addevent(event);
-    alert('dianji=='+event.clientY);
+   // alert('dianji=='+event.clientY);
     
     var childs = document.getElementsByTagName("DIV");
     for(child in childs){
@@ -262,7 +262,7 @@ function webPointToHtml(p_x,p_y,p_scale){
     p_y*=p_scale;
     p_x +=scrollPositionX;
     p_y +=scrollPositionY;
-    alert('webPointToHtml'+p_x+','+p_y+','+p_scale);
+   // alert('webPointToHtml'+p_x+','+p_y+','+p_scale);
     return {x:p_x,y:p_y}
     
 }
@@ -273,16 +273,17 @@ function htmlPointToWeb(p_x,p_y,p_scale){
     p_y -=scrollPositionY;
     p_x/=p_scale;
     p_y/=p_scale;
+    //alert('syp=='+','+p_x+','+p_y+',p_scale'+p_scale);
     return {x:p_x,y:p_y}
 }
 
 function getDivPosition(p_x,p_y,p_webWidth){
-    alert('getDivPosition'+p_x+','+p_y+','+p_webWidth);
+   // alert('getDivPosition'+p_x+','+p_y+','+p_webWidth);
     var divid;
     var point_str = '';
-    var scale = p_webWidth/window.outerWidth;
+    var scale = 1;//p_webWidth/window.outerWidth;
     var html_point = webPointToHtml(p_x,p_y,scale);
-    alert('html_point'+html_point.x+','+html_point.y);
+   // alert('html_point'+html_point.x+','+html_point.y);
     
     var tagid = document.elementFromPoint(p_x,p_y,scale);
     while(1){
@@ -292,17 +293,18 @@ function getDivPosition(p_x,p_y,p_webWidth){
             var div_y= Op(divid).y;
             var div_w = divid.clientWidth;
             var div_h = divid.clientHeight;
-            alert('div'+div_x+','+div_y+','+div_w+','+div_h);
+            //alert('div'+div_x+','+div_y+','+div_w+','+div_h);
             if(div_h < pic_width){
-                var webpoint =htmlPointToWeb(div_x.div_y,scale); 
+                var webpoint =htmlPointToWeb(div_x,div_y,scale); 
                 point_str = webpoint.x+','+webpoint.y+','+div_h;
-                alert('div_h < pic_width');
+               // alert('div_h < pic_width');
             }else{
-                if(div_y-p_y < pic_width){
-                    p_y = div_y - pic_width;
+                if(div_y+div_h-p_y < pic_width){
+                    p_y = div_y+div_h - pic_width;
                 }
-                var webpoint =htmlPointToWeb(p_x.p_y,scale); 
-                point_str = webpoint.x+','+webpoint.y+','+pic_width;
+               // var webpoint =htmlPointToWeb(p_x,p_y,scale); 
+               // point_str = webpoint.x+','+webpoint.y+','+pic_width;
+               point_str = p_x+','+p_y+','+pic_width;
             }
             //            var child = document.createElement("div");
             //            child.style.position="absolute";
@@ -319,6 +321,7 @@ function getDivPosition(p_x,p_y,p_webWidth){
             break;
         }
     }
+    tagid.style.backgroundColor = "#00ff00";
     return point_str;
 }
 function test(){

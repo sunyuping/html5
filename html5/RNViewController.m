@@ -451,7 +451,7 @@
     if ([gestureRescongnizer state] == UIGestureRecognizerStateBegan) {
         _touchBegainPoint = [gestureRescongnizer locationInView:_mainwebview];
         NSArray *point = [self getPoint:_touchBegainPoint];
-
+        
         if(UIGraphicsBeginImageContextWithOptions != NULL)
         {
             UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
@@ -465,7 +465,7 @@
         UIGraphicsEndImageContext();
         
         
-        CGRect rect = CGRectMake(0, _touchBegainPoint.y - 30, imageSize.width, 60);
+        CGRect rect = CGRectMake(0,[[point objectAtIndex:1] floatValue], imageSize.width, 60);
         if (_screenShotOfWebView) {
             [_screenShotOfWebView removeFromSuperview];
             [_screenShotOfWebView release];
