@@ -33,6 +33,7 @@
 		9B4C3AE814E90AB5006C66F3 /* iphone-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C3AD014E90AB5006C66F3 /* iphone-bg.png */; };
 		9B4C3AE914E90AB5006C66F3 /* springboard-bar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C3AD114E90AB5006C66F3 /* springboard-bar-bg.png */; };
 		9B4E8DBC14ECD63700B51460 /* login.html in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E8DBB14ECD63700B51460 /* login.html */; };
+		9B5D1D1715099D2300FEF1A9 /* scrolldemo.html in Resources */ = {isa = PBXBuildFile; fileRef = 9B5D1D1615099D2300FEF1A9 /* scrolldemo.html */; };
 		9BA779EC14E90A6E0007987C /* commend.js in Sources */ = {isa = PBXBuildFile; fileRef = 9BA779EA14E90A6E0007987C /* commend.js */; };
 		9BA779ED14E90A6E0007987C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9BA779EB14E90A6E0007987C /* index.html */; };
 		9BB52B0914DD5A7E00C3F2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB52B0814DD5A7E00C3F2E8 /* UIKit.framework */; };
@@ -87,6 +88,7 @@
 		9B4C3AD014E90AB5006C66F3 /* iphone-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-bg.png"; sourceTree = "<group>"; };
 		9B4C3AD114E90AB5006C66F3 /* springboard-bar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "springboard-bar-bg.png"; sourceTree = "<group>"; };
 		9B4E8DBB14ECD63700B51460 /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = login.html; sourceTree = "<group>"; };
+		9B5D1D1615099D2300FEF1A9 /* scrolldemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scrolldemo.html; sourceTree = "<group>"; };
 		9BA779EA14E90A6E0007987C /* commend.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = commend.js; sourceTree = "<group>"; };
 		9BA779EB14E90A6E0007987C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9BB52B0414DD5A7E00C3F2E8 /* html5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = html5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF17F5414F24BB90017A014 /* listdemo.html */,
+				9B5D1D1615099D2300FEF1A9 /* scrolldemo.html */,
 				9BD2710C1508C56300502DA5 /* phonegap.js */,
 				9BD271091508BC6100502DA5 /* iscroll.js */,
 				9BF17F5514F24BB90017A014 /* listdemo.js */,
@@ -353,6 +356,7 @@
 				9BF17F5D14F24BB90017A014 /* phone_startup.png in Resources */,
 				9BF17F5E14F24BB90017A014 /* sencha-touch.css in Resources */,
 				9BF17F6014F24BB90017A014 /* tablet_startup.png in Resources */,
+				9B5D1D1715099D2300FEF1A9 /* scrolldemo.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
