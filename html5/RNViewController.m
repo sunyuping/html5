@@ -88,6 +88,10 @@
     
   //  [_mainwebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mt.renren.com"]]]; //3g.sina.com.cn/3g/mil/?vt=3&pos=24
     NSString *path = [[NSBundle mainBundle] resourcePath];
+    /*
+    *查看点击获取标签位置信息用index.html，查看滚动效果用scrolldemo.html 
+    * 
+    */
     NSString *pathFile = [path stringByAppendingString:@"/index.html"];//test1，index，scrolldemo
 
     NSString *htmlstr = [NSString stringWithContentsOfFile:pathFile encoding:NSUTF8StringEncoding error:nil];
